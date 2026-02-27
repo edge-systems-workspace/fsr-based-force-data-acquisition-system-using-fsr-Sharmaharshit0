@@ -34,6 +34,7 @@ void loop() {
 
     Serial.print("FSR Value: ");
     Serial.println(fsrValue);
+    delay(500);
 
     // TODO 5:
     // Read analog value from FSR
