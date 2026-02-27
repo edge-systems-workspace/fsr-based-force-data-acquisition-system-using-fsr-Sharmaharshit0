@@ -20,6 +20,7 @@ int fsrValue = 0
 
 void setup() {
     Serial.begin(9600);
+
     // TODO 3:
     // Initialize Serial communication (9600 baud rate)
 
@@ -28,6 +29,11 @@ void setup() {
 }
 
 void loop() {
+
+    fsrValue = analogRead(fsrPin);   // Read analog value
+
+    Serial.print("FSR Value: ");
+    Serial.println(fsrValue);
 
     // TODO 5:
     // Read analog value from FSR
