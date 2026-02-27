@@ -1,9 +1,11 @@
 #include <Arduino.h>
+int fsrPin = A0;     // FSR connected to Analog pin A0
+int fsrValue = 0
 /**
  * @file main.ino
  * @brief Embedded Force Measurement System using FSR
- * @author YOUR_NAME
- * @date YYYY-MM-DD
+ * @author Harshit Sharma
+ * @date 2026-02-27
  *
  * @details
  * Reads analog force data from FSR sensor and
@@ -17,6 +19,7 @@
  // Create variable to store sensor reading
 
 void setup() {
+    Serial.begin(9600);
 
     // TODO 3:
     // Initialize Serial communication (9600 baud rate)
@@ -26,6 +29,12 @@ void setup() {
 }
 
 void loop() {
+
+    fsrValue = analogRead(fsrPin);   // Read analog value
+
+    Serial.print("FSR Value: ");
+    Serial.println(fsrValue);
+    delay(500);
 
     // TODO 5:
     // Read analog value from FSR
